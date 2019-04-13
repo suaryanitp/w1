@@ -30,6 +30,12 @@ Kode R dapat dimasukan ke dalam dokumen R Markdown dengan menggunakan *chunck* y
 ```{r}
 head(mtcars) # melihat 6 baris pertama dari data mtcars, mtcars adalah data bawaan yang tersedia di R
 ```
+```{r}
+filled.contour(volcano,
+               color.palette = terrain.colors, 
+               plot.title = title("Topografi Gunung Maunga Whau"), 
+               key.title = title("Tinggi\n(meter)"))
+```
 
 Jika ingin menjalankan kode R dalam *chunck* tersebut, Anda dapat menggunakan pemintas Ctrl + Enter (menjalankan satu baris kode) atau Ctrl + Shift + Enter (menjalankan semua kode dalam *chunck*). Sekarang buatlah *chunck* baru yang isinya adalah baris kode R berikut: (Petunjuk: Gunakan Ctrl + Alt + I)
 
@@ -67,10 +73,10 @@ huruf_vokal # mencetak objek data dengan nama 'huruf_vokal' pada konsol
 Jenis dari data dapat diketahui dengan menggunakan fungsi `typeof()`. Dapatkah Anda mengetahui jenis data dari 'huruf_vokal' diatas? Bagaimana jika Anda membuat objek data dengan menggunakan fungsi `c()` namun jenis elemennya berbeda-beda? Dapatkah Anda menjelaskannya? Isilah '___' dengan jawaban yang sesuai!
 
 ```{r}
-___(huruf_vokal)
+typeof(huruf_vokal)
 
 beragam <- c(2.7, "berbeda", TRUE, 4L) # 2.7 bertipe double, "berbeda" bertipe character, TRUE bertipe logical, 4L bertipe integer
-typeof(___) # cek tipe dari objek data dengan nama 'beragam'
+typeof(beragam) # cek tipe dari objek data dengan nama 'beragam'
 ```
 
 Struktur data dua dimensi merupakan yang paling banyak digunakan di R, yaitu matrix dan dataframe yang dapat dibuat dengan menggunakan fungsi `matrix()` dan `data.frame()`. Kedua data tersebut umumnya jarang dibuat secara langsung di R, notabene berasal dari berkas luar atau merupakan hasil dari penggunaan fungsi. Prinsipnya suatu dataframe merupakan gabungan dari beberapa data satu dimensi dengan jumlah yang sama, umumnya adalah *atomic vectors*. Menurut Anda, dapatkah suatu frame tersusun atas beberapa *list* dengan jumlah yang sama?
